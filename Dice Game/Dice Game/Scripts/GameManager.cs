@@ -34,50 +34,6 @@ namespace Dice_Game.Scripts
 
 
 
-
-
-
-
-
-    internal class Player
-    {
-        // this gets the name of the player and assigns their most current rolll and points
-        public string Name { get; set; }
-        public int CurrentRoll { get; set; }
-        public int Points { get; set; }
-        public Player(string name)
-        {
-            Name = name;
-            CurrentRoll = 0;
-            Points = 0;
-        }
-        // Roll a die and stores the result
-        public void TakeTurn(Die die)
-        {
-            CurrentRoll = die.Roll();
-        }
-
-        // Increase points when the player wins
-        public void AddPoint()
-        {
-            Points++;
-        }
-
-        // Show current score
-        public string ShowScore()
-        {
-            return $"{Name}: {Points} points";
-        }
-        // Show roll result
-        public void ShowRoll(Die die)
-        {
-            Console.WriteLine($"\n{Name} rolled a {CurrentRoll} on a d{die.GetSides()}.");
-        }
-    }
-
-
-
-
     internal class GameManager
     {
         private Player player;
